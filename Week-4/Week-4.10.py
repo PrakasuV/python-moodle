@@ -1,54 +1,31 @@
-Perfect Square After adding One
+Next Perfect Square
 
-Given an integer N, check whether N the given number can be made a perfect square after adding 1 to it.
+Given a number N, find the next perfect square greater than N.
 
 Input Format:
 
-Single integer input.
+Integer input from stdin.
 
 Output Format:
 
-Yes or No.
+Perfect square greater than N.
 
 Example Input:
 
-24
+10
 
 Output:
 
-Yes
-
-Example Input:
-
-26
-
-Output:
-
-No
-
-For example:
-
-Input	Result
-
-24	Yes
+16
 
 
 
 
 
-import math
-
-n=int(input())
-
-a=n+1
-
-sr=int(math.sqrt(a))
-
-if(sr*sr==a):
-
-    print("Yes")
-
-else:
-
-    print("No")
-
+num=int(input())
+while 1:
+    num=num+1
+    root=(num**0.5)
+    if root==int(root):
+        print(num)
+        break
