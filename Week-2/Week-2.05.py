@@ -1,32 +1,24 @@
-Compound Interest
+The program that you create for this exercise will begin by reading the cost of a meal ordered at a restaurant from the user. Then your program will compute the tax and tip for the meal. Use your local tax rate (5 percent) when computing the amount of tax owing. Compute the tip as 18 percent of the meal amount (without the tax). The output from your program should include the tax amount, the tip amount, and the grand total for the meal including both the tax and the tip. Format the output so that all of the values are displayed using two decimal places.
 
-Pretend that you have just opened a new savings account that earns 4 percent interest per year. The interest that you earn is paid at the end of the year, and is added to the balance of the savings account. Write a program that begins by reading the amount of money deposited into the account from the user. Then your program should compute and display the amount in the savings account after 1, 2, and 3 years. Display each amount so that it is rounded to 2 decimal places.
+Sample Input
 
-Sample Input:
+100
 
-10000
+Sample Output
 
-Sample Output:
-
-Balance as of end of Year 1: $10400.00.
-
-Balance as of end of Year 2: $10816.00.
-
-Balance as of end of Year 3: $11248.64
+The tax is 5.00 and the tip is 18.00, making the total 123.00
 
 
 
-a=int(input())
+For example:
 
-b=(a*0.04)+a
+Input	Result
+100
+The tax is 5.00 and the tip is 18.00, making the total 123.00
 
-c=b+(b*0.04)
 
-d=c+(c*0.04)
-
-print("Balance as of end of Year 1: ${:.2f}.".format(b))
-
-print("Balance as of end of Year 2: ${:.2f}.".format(c))
-
-print("Balance as of end of Year 3: ${:.2f}.".format(d))
-
+a=float(input())
+b=0.05*a
+c=0.18*a
+d=a+b+c
+print(f"The tax is {b:.2f} and the tip is {c:.2f}, making the total {d:.2f}")
