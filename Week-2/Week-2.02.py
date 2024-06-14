@@ -1,37 +1,46 @@
-Doll Sings
+Mr.Ram has been given a problem kindly help him to solve it. The input of the program is either 0 or 1. IF 0 is the input he should display "C" if 1 is the input it should display "D".There is a constraint that Mr. Ram should use either logical operators or arithmetic operators to solve the problem, not anything else.
 
-In London, every year during Dasara there will be a very grand doll show. People try to invent new dolls of different varieties. The best-sold doll's creator will be awarded with a cash prize. So people broke their heads to create dolls innovatively. Knowing this competition, Mr.Lokpaul tried to create a doll that sings only when an even number is pressed and the number should not be zero and greater than 100.
+Hint:
 
- IF Lokpaul wins print true, otherwise false.
+Use ASCII values of C and D.
 
-Sample Input
+Input Format:
 
-10
+An integer x, 0<=x<=1. .
 
-Sample Output
+Output Format:
 
-True
+output a single character "C" or "D"depending on the value of x.
 
-Explanation:
+Input 1:
+0
+Output 1:
+C
 
-Since 10 is an even number and a number between 0 and 100, True is printed
+
+Input 2:
+1
+
+Output 1:
+D
+
+
 
 
 
 For example:
 
 Input	Result
-101
-False
+0
+C
+
 
 
 
 a=int(input())
-if(a>=0 and a<=100):
-    if(a%2==0):
-        print("True")
-else:
-    
-    print("False")
+if(a==0):
+    print("C")
+if(a==1):
+    print("D")
 
 
