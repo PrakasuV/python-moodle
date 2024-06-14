@@ -1,50 +1,40 @@
-C or D
+In the 1800s, the battle of Troy was led by Hercules. He was a superstitious person. He believed that his crew can win the battle only if the total count of the weapons in hand is in multiple of 3 and the soldiers are in an even number of count. Given the total number of weapons and the soldier's count, Find whether the battle can be won or not according to Hercules's belief. If the battle can be won print True otherwise print False.
 
-Mr.Ram has been given a problem kindly help him to solve it. The input of the program is either 0 or 1. IF 0 is the input he should display "C" if 1 is the input it should display "D".There is a constraint that Mr. Ram should use either logical operators or arithmetic operators to solve the problem, not anything else.
+Input format:
 
-Hint:
+Line 1 has the total number of weapons
 
-Use ASCII values of C and D.
+Line 2 has the total number of Soldiers.
 
+Output  Format:
 
+If the battle can be won print True otherwise print False.
 
-Input Format:
+Sample Input:
 
-An integer x, 0<=x<=1. .
+32
 
-Output Format:
+43
 
-output a single character "C" or "D"depending on the value of x.
+Sample Output:'
 
-Input 1:
-
-0
-
-Output 1:
-
-C
+False
 
 
 
-Input 2:
+For example:
 
-1
+Input	Result
+32
+43
+False
 
-
-
-Output 1:
-
-D
 
 
 
 a=int(input())
-
-if(a==0):
-
-    print("C")
-
+b=int(input())
+if((a%3==0)&(b%2==0)):
+    print('True')
 else:
-
-    print("D")
-
+    print('False')
