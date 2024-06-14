@@ -1,40 +1,36 @@
-Troy Battle
+Write a python program that takes a integer between 0 and 15 as input and displays the number of '1' s in its binary form.(Hint:use python bitwise operator.
 
-In the 1800s, the battle of Troy was led by Hercules. He was a superstitious person. He believed that his crew can win the battle only if the total count of the weapons in hand is in multiple of 3 and the soldiers are in an even number of count. Given the total number of weapons and the soldier's count, Find whether the battle can be won or not according to Hercules's belief. If the battle can be won print True otherwise print False.
+Sample Input
 
-Input format:
+3
 
-Line 1 has the total number of weapons
+Sample Output:
 
-Line 2 has the total number of Soldiers.
+2
 
-Output  Format:
+Explanation:
 
-If the battle can be won print True otherwise print False.
+The binary representation of 3 is 011, hence there are 2 ones in it. so the output is 2.
 
 
+For example:
 
-Sample Input:
-
-32
-
-43
-
-Sample Output:'
-
-False
+Input	Result
+3
+2
 
 
 
-a=int(input())
-
-b=int(input())
-
-if(a%3==0 and b%2==0):
-
-    print("True")
-
+def count_ones_in_binary(number):
+    count = 0
+    while number > 0:
+        if number & 1:
+            count += 1
+        number >>= 1
+    return count
+number = int(input(""))
+if 0 <= number <= 15:
+    ones = count_ones_in_binary(number)
+    print(f"{ones}")
 else:
-
-    print("False")
-
+    print(f"Invalid input: {number} is not between 0 and 15.")
