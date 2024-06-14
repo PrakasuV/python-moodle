@@ -1,24 +1,45 @@
-Factors of a number
+Nth Fibonacci
 
-Determine the factors of a number (i.e., all positive integer values that evenly divide into a number).
+Write a program to return the nth number in the fibonacci series. The value of N will be passed to the program as input.
+
+
+
+NOTE: Fibonacci series looks like –
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, . . . and so on.
+
+i.e. Fibonacci series starts with 0 and 1, and continues generating the next number as the sum of the previous two numbers.
+
+• first Fibonacci number is 0,
+
+• second Fibonacci number is 1,
+
+• third Fibonacci number is 1,
+
+• fourth Fibonacci number is 2,
+
+• fifth Fibonacci number is 3,
+
+• sixth Fibonacci number is 5,
+
+• seventh Fibonacci number is 8, and so on.
+
+
 
 For example:
 
-Input	Result	
+Input:
 
-20	1 2 4 5 10 20	
+7
 
-k=int(input())
+Output
 
-l=[]
+8
 
-for i in range(1,k+1):
 
-    if(k%i==0):
-
-        l.append(i)
-
-for j in l:
-
-    print(j,end=' ')
+n=int(input())
+a,b=0,1
+for i in range(1,n):
+    a,b=b,a+b
+print(a)
 
