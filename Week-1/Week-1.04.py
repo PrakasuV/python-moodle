@@ -2,8 +2,6 @@ Gain percent
 
 Alfred buys an old scooter for Rs. X and spends Rs. Y on its repairs. If he sells the scooter for Rs. Z (Z>X+Y). Write a program to help Alfred to find his gain percent. Get all the above-mentioned values through the keyboard and find the gain percent.
 
-
-
 Input Format:
 
 The first line contains the Rs X
@@ -29,23 +27,18 @@ Sample Output:
 For example:
 
 Input	Result
-
 45500
-
 500
+60000
+30.43 is the gain percent.
 
-60000	30.43 is the gain percent.
 
+x=int(input())
+y=int(input())
+z=int(input())
+profit=z-(x+y)
+profit_per=(profit/(x+y))*100
+print("{:.2f}".format(profit_per,2),"is the gain percent.")
 
-
-buys=int(input())
-
-repair=int(input())
-
-sells=int(input())
-
-g=(((sells-(buys+repair))/(buys+repair))*100)
-
-print("{:.2f}".format(g), "is the gain percent.")
 
  
