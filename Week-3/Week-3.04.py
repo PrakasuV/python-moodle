@@ -1,53 +1,44 @@
-IN/OUT
+The length of a month varies from 28 to 31 days. In this exercise you will create a program that reads the name of a month from the user as a string. Then your program should display the number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.
 
-Ms. Sita, the faculty handling programming lab for you is very strict. Your seniors have told you that she will not allow you to enter the week's lab if you have not completed atleast half the number of problems given last week. Many of you didn't understand this statement and so they requested the good programmers from your batch to write a program to find whether a student will be allowed into a week's lab given the number of problems given last week and the number of problems solved by the student in that week.
+Sample Input 1
 
- 
+February
 
-Input Format: 
+Sample Output 1
 
-Input consists of 2 integers.
+February has 28 or 29 days in it.
 
- The first integer corresponds to the number of problems given and the second integer corresponds to the number of problems solved.
+Sample Input 2
 
- Output Format:
+March
 
- Output consists of the string “IN” or “OUT”. 
+Sample Output 2
 
- Sample Input and Output:
+March has 31 days in it.
 
- Input
+Sample Input 3
 
- 8
+April
 
- 3
+Sample Output 3
 
- Output
-
- OUT
+April has 30 days in it.
 
 
 
 For example:
 
 Input	Result
-
-8
-
-3	OUT
+February
+February has 28 or 29 days in it.
 
 
 
-a=int(input())
-
-b=int(input())
-
-c=(a/2)
-
-if(c>b):
-
-    print("OUT")
-
-else:
-
-    print("IN")
+l=[30,31]
+a=input()
+if(a=='January' or a=='March' or a=='May' or a=='July' or a=='August' or a=='October' or a=='December'):
+    print(a,'has',l[1],'days in it.')
+elif(a=='April' or a=='June' or a=='September' or a=='November'):
+    print(a,'has',l[0],'days in it.')
+if(a=='February'):
+    print(a,'has 28 or 29 days in it.')
