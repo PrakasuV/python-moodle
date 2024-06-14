@@ -1,152 +1,58 @@
-Element Insertion
+Two string values S1, S2 are passed as the input. The program must print first N characters present in S1 which are also present in S2.
 
-Consider a program to insert an element / item in the sorted array. Complete the logic by filling up required code in editable section. Consider an array of size 10. The eleventh item is the data is to be inserted. 
+Input Format:
 
-Sample Test Cases
+The first line contains S1.
+The second line contains S2.
+The third line contains N.
 
-Test Case 1
+Output Format:
 
-Input
+The first line contains the N characters present in S1 which are also present in S2.
 
-1
+Boundary Conditions:
 
+2 <= N <= 10
+2 <= Length of S1, S2 <= 1000
+
+Example Input/Output 1:
+
+Input:
+
+abcbde
+cdefghbb
 3
 
-4
+Output:
 
-5
+bcd
 
-6
+Note:
 
-7
+b occurs twice in common but must be printed only once.
 
-8
 
-9
 
-10
 
-11
 
-2
 
+S1 = input().strip()
+S2 = input().strip()
+N = int(input().strip())
 
+common_chars = set(S1) & set(S2)
 
-Output
+output = ''
+count = 0
+added_chars = set()  # Set to store added characters
 
-ITEM to be inserted:2
+for char in S1:
+    if char in common_chars and char not in added_chars:
+        output += char
+        added_chars.add(char)
+        count += 1
+        if count == N:
+            break
 
-After insertion array is:
-
-1
-
-2
-
-3
-
-4
-
-5
-
-6
-
-7
-
-8
-
-9
-
-10
-
-11
-
- 
-
-
-
-
-
-Test Case 2
-
-Input
-
-11
-
-22
-
-33
-
-55
-
-66
-
-77
-
-88
-
-99
-
-110
-
-120
-
-44
-
- 
-
-Output
-
- 
-
-ITEM to be inserted:44
-
-After insertion array is:
-
-11
-
-22
-
-33
-
-44
-
-55
-
-66
-
-77
-
-88
-
-99
-
-110
-
-120
-
-
-
-
-
-def insert_sorted(list, n):
-
-    list.append(n)
-
-    sorted_list = sorted(list)
-
-    print("After insertion array is:")
-
-    for i in range(11):
-
-        print(sorted_list[i])
-
- 
-
-sorted_list = [int(input()) for i in range(10)]
-
-new_element = int(input())
-
-print("ITEM to be inserted:", new_element, sep='')
-
-insert_sorted(sorted_list, new_element)
+print(output)
 
