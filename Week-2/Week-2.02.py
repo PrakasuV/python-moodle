@@ -4,8 +4,6 @@ In London, every year during Dasara there will be a very grand doll show. People
 
  IF Lokpaul wins print true, otherwise false.
 
-
-
 Sample Input
 
 10
@@ -20,14 +18,20 @@ Since 10 is an even number and a number between 0 and 100, True is printed
 
 
 
+For example:
+
+Input	Result
+101
+False
+
+
+
 a=int(input())
-
-if(a>0 and a<100 and a%2==0):
-
-    print("True")
-
+if(a>=0 and a<=100):
+    if(a%2==0):
+        print("True")
 else:
-
+    
     print("False")
 
 
