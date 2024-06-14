@@ -1,38 +1,56 @@
-Unique Digit Count
+Disarium Number
 
-Write a program to find the count of unique digits in a given number N. The number will be passed to the program as an input of type int.
+A Number is said to be Disarium number when the sum of its digit raised to the power of their respective positions becomes equal to the number itself. Write a program to print number is Disarium or not.
 
-Assumption: The input number will be a positive integer number >= 1 and <= 25000.
 
-For e.g.
 
-If the given number is 292, the program should return 2 because there are only 2 unique digits '2' and '9' in this number
+Input Format:
 
-If the given number is 1015, the program should return 3 because there are 3 unique digits in this number, '1', '0', and '5'.
+Single Integer Input from stdin.
+
+Output Format:
+
+Yes or No.
+
+Example Input:
+
+175
+
+Output:
+
+Yes
+
+Explanation
+
+1^1 + 7^2 +5^3 = 175
+
+Example Input:
+
+123
+
+Output:
+
+No
 
 For example:
 
 Input	Result
 
-292	2
+175	Yes
 
-1015	3
+123	No
 
 
 
-a=int(input())
 
-b=[]
-
-while a>0:
-
-    c=a%10
-
-    a=a//10
-
-    b.append(c)
-
-b=list(set(b))
-
-print(len(b))
+number = int(input())
+num_str = str(number)
+length = len(num_str)
+total = 0
+for i in range(length):
+    total += int(num_str[i]) ** (i + 1)
+if total==number:
+    print("Yes")
+else:
+    print("No")
 
