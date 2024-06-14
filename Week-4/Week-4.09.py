@@ -1,56 +1,48 @@
-Product of single digit
+Sum of Series
 
-Given a positive integer N, check whether it can be represented as a product of single digit numbers.
+Write a program to find the sum of the series 1 +11 + 111 + 1111 + . . . + n terms (n will be given as input from the user and sum will be the output)
 
-Input Format:
+Sample Test Cases
 
-Single Integer input.
+Test Case 1      
 
-Output Format:
+Input
 
-Output displays Yes if condition satisfies else prints No.
+4          
 
-Example Input:
+Output
 
-14
+1234 
 
-Output:
+Explanation:
 
-Yes
+as input is 4, have to take 4 terms. 
 
-Example Input:
+1 + 11 + 111 + 1111
 
-13
 
-Output:
 
-No
+
+
+Test Case 2
+
+Input 
+
+6
+
+Output 
+
+123456
+
 
 
 
 
 
 a=int(input())
-
-flag=0
-
-for i in range(10):
-
-    for j in range(10):
-
-        if(i*j==a):
-
-            flag=1
-
-            break
-
-if(flag==1):
-
-    print("Yes")
-
-else:
-
-    print("No")
-
+sum=0
+for i in range(1,a+1):
+    sum+=(10**i-1)/9
+print("%d"%sum)
 
 
