@@ -1,108 +1,80 @@
-Chinese Zodiac
+Write a program to find the eligibility of admission for a professional course based on the following criteria:
 
-The Chinese zodiac assigns animals to years in a 12 year cycle. One 12 year cycle is shown in the table below. The pattern repeats from there, with 2012 being another year of the dragon, and 1999 being another year of the hare.
+Marks in Maths >= 65
 
-Year Animal
+Marks in Physics >= 55
 
-2000 Dragon
+Marks in Chemistry >= 50
 
-2001 Snake
+Or
 
-2002 Horse
+Total in all three subjects >= 180
 
-2003 Sheep
+Sample Test Cases
 
-2004 Monkey
+Test Case 1
 
-2005 Rooster
+Input
 
-2006 Dog
+70
 
-2007 Pig
+60
 
-2008 Rat
+80
 
-2009 Ox
+Output 
 
-2010 Tiger
+The candidate is eligible
 
-2011 Hare
+Test Case 2 
 
-Write a program that reads a year from the user and displays the animal associated with that year. Your program should work correctly for any year greater than or equal to zero, not just the ones listed in the table.
+Input
+
+50
+
+80
+
+80 
+
+Output
+
+The candidate is eligible
+
+
+Test Case 3
+
+Input
+
+50
+
+60
+
+40
+
+Output
+
+The candidate is not eligible
 
 
 
-Sample Input 1
+For example:
 
-2010
-
-Sample Output 1
-
-2010 is the year of the Tiger.
-
-Sample Input 2
-
-2020
-
-Sample Output 2
-
-2020 is the year of the Rat.
+Input	Result
+70
+60
+80
+The candidate is eligible
 
 
 
 
 
 a=int(input())
-
-b=a%100
-
-c=b%12
-
-if(c==0):
-
-    print(a,"is the year of the Dragon.")
-
-elif(c==1):
-
-    print(a,"is the year of the Snake.")
-
-elif(c==2):
-
-    print(a,"is the year of the Horse.")
-
-elif(c==3):
-
-    print(a,"is the year of the Sheep.")
-
-elif(c==4):
-
-    print(a,"is the year of the Monkey.")
-
-elif(c==5):
-
-    print(a,"is the year of the Rooster.")
-
-elif(c==6):
-
-    print(a,"is the year of the Dog.")
-
-elif(c==7):
-
-    print(a,"is the year of the Pig.")
-
-elif(c==8):
-
-    print(a,"is the year of the Rat.")
-
-elif(c==9):
-
-    print(a,"is the year of the Ox.")
-
-elif(c==10):
-
-    print(a,"is the year of the Tiger.")
-
-elif(c==11):
-
-    print(a,"is the year of the Hare.")
-
+b=int(input())
+c=int(input())
+if(a>=65 and b>=55 and c>=50):
+    print("The candidate is eligible")
+elif(a+b+c>=180):
+    print("The candidate is eligible")
+else:
+    print("The candidate is not eligible")
