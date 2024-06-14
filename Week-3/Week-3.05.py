@@ -1,58 +1,59 @@
-Vowel or Consonant
+Three numbers form a Pythagorean triple if the sum of squares of two numbers is equal to the square of the third.
 
-In this exercise you will create a program that reads a letter of the alphabet from the user. If the user enters a, e, i, o or u then your program should display a message indicating that the entered letter is a vowel. If the user enters 'y' then your program should display a message indicating that sometimes y is a vowel, and sometimes y is a consonant. Otherwise your program should display a message indicating that the letter is a consonant.
+For example, 3, 5 and 4 form a Pythagorean triple, since 3*3 + 4*4 = 25 = 5*5
 
-Sample Input 1
+You are given three integers, a, b, and c. They need not be given in increasing order. If they form a Pythagorean triple, then print "yes", otherwise, print "no". Please note that the output message is in small letters.
 
-i
+Sample Input
 
-Sample Output 1
+3
 
-It's a vowel.
+5
 
-Sample Input 2
+4
 
-y
+Sample Output
 
-Sample Output 2
+yes
 
-Sometimes it's a vowel... Sometimes it's a consonant.
+Sample Test Cases
 
-Sample Input3
+Test Case 1     
 
-c
+Input
 
-Sample Output 3
+3
 
-It's a consonant.
+5
+
+4
+
+Output
+
+yes
+
+Test Case 2     
+
+Input
+
+5
+
+8
+
+2
+
+Output
+
+no
 
 
-
-
-
-For example:
-
-Input	Result
-
-y	Sometimes it's a vowel... Sometimes it's a consonant.
-
-u	It's a vowel.
-
-p	It's a consonant.
-
-
-
-a=input()
-
-if(a=='a' or a=='e' or a=='i' or a=='o' or a=='u'):
-
-    print("It's a vowel.")
-
-elif(a=='y'):
-
-    print("Sometimes it's a vowel... Sometimes it's a consonant.")
-
+a=int(input())
+b=int(input())
+c=int(input())
+x=a*a
+y=b*b
+z=c*c
+if(x+y==z or x+z==y or z+y==x):
+    print("yes")
 else:
-
-    print("It's a consonant.")
-
+    print("no")
