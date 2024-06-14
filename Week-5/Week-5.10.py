@@ -1,112 +1,35 @@
-Strictly increasing
+Given two Strings s1 and s2, remove all the characters from s1 which is present in s2.
 
-Write a Python program to check if a given list is strictly increasing or not. Moreover, If removing only one element from the list results in a strictly increasing list, we still consider the list true
+ 
 
-Input:
+Constraints
 
-n : Number of elements
+ 
 
-List1: List of values
+1<= string length <= 200
 
-Output
+ 
 
-Print "True" if list is strictly increasing or decreasing else print "False"
+Sample Input 1
 
+ 
 
+experience
 
-Sample Test Case
+enc
 
+ 
 
+Sample Output 1
 
-Input
+ 
 
+xpri
 
 
-7
-
-
-
-1
-
-
-
-2
-
-
-
-3
-
-
-
-0
-
-
-
-4
-
-
-
-5
-
-
-
-6
-
-
-
-Output 
-
-
-
-True
-
-
-
-n= int(input())
-
-arr = [int(input()) for i in range(n)]
-
-l = arr.copy()
-
-g=0
-
-size = len(arr)
-
-arr_asc = sorted(arr)
-
-arr_des = sorted(arr)[::-1]
-
-if arr==arr_asc or arr==arr_des:
-
-    print('True')
-
-    g=1
-
-else:
-
-    for i in arr:
-
-        l.remove(i)
-
-        arr_asc.remove(i)
-
-        arr_des.remove(i)
-
-        if l==arr_asc or l==arr_des:
-
-        	print('True')
-
-        	g=1
-
-        	break
-
-        l=arr.copy()
-
-        arr_asc = sorted(arr)
-
-        arr_des = sorted(arr)[::-1]
-
-if g==0:
-
-    print('False')
-
+s1 = input()
+s2 = input()
+set_s1 = set(s1)
+set_s2 = set(s2)
+filtered_s1 = ''.join(char for char in s1 if char not in set_s2)
+print(filtered_s1)
