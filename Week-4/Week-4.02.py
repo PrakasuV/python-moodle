@@ -1,22 +1,38 @@
-2.Next Perfect Square
+Perfect Square After adding One
 
-Given a number N, find the next perfect square greater than N.
+Given an integer N, check whether N the given number can be made a perfect square after adding 1 to it.
 
 Input Format:
 
-Integer input from stdin.
+Single integer input.
 
 Output Format:
 
-Perfect square greater than N.
+Yes or No.
 
 Example Input:
 
-10
+24
 
 Output:
 
-16
+Yes
+
+Example Input:
+
+26
+
+Output:
+
+No
+
+For example:
+
+Input	Result
+
+24	Yes
+
+
 
 
 
