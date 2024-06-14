@@ -1,74 +1,35 @@
-Disarium Number
+Prime Checking
 
-A Number is said to be Disarium number when the sum of its digit raised to the power of their respective positions becomes equal to the number itself. Write a program to print number is Disarium or not.
+Write a program that finds whether the given number N is Prime or not. If the number is prime, the program should return 2 else it must return 1.
+
+Assumption: 2 <= N <=5000, where N is the given number.
+
+Example1: if the given number N is 7, the method must return 2
+
+Example2: if the given number N is 10, the method must return 1
 
 
-
-Input Format:
-
-Single Integer Input from stdin.
-
-Output Format:
-
-Yes or No.
-
-Example Input:
-
-175
-
-Output:
-
-Yes
-
-Explanation
-
-1^1 + 7^2 +5^3 = 175
-
-Example Input:
-
-123
-
-Output:
-
-No
 
 For example:
 
 Input	Result
 
-175	Yes
+7	2
 
-123	No
-
-
+10	1
 
 
 
-import math
 
-n=int(input())
 
-a=len(str(n))
 
-sum=0
-
-x=n
-
-while(x!=0):
-
-    r=x%10
-
-    sum=int(sum+math.pow(r,a))
-
-    a-=1
-
-    x=x//10
-
-if(sum==n):
-
-    print("Yes")
-
+num=int(input())
+if num>1:
+    for i in range(2,num):
+        if(num%i)==0:
+            print(1)
+            break
+    else:
+            print(2)
 else:
-
-    print("No")
-
+    print(1)
