@@ -17,26 +17,16 @@ Your total refund will be $6.00.
 For example:
 
 Input	Result
-
 20
-
-20	Your total refund will be $7.00.
-
-
+20
+Your total refund will be $7.00.
 
 
-
-
-
-a=int(input())
-
-b=int(input())
-
-c=a*0.1
-
-d=b*0.25
-
-e=c+d
-
-print("Your total refund will be ${:.2f}.".format(e))
-
+x=int(input())
+y=int(input())
+z=x*0.10
+a=y*0.25
+b=z+a
+print("Your total refund will be $",end='')
+print(format(b,".2f"),end='')
+print('.')
