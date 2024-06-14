@@ -1,54 +1,58 @@
-Consider the below words as key words and check the given input is key word or not.
+Two string values S1, S2 are passed as the input. The program must print first N characters present in S1 which are also present in S2.
 
-keywords: {break, case, continue, default, defer, else, for, func, goto, if, map, range, return, struct, type, var}
+Input Format:
 
-Input format:
+The first line contains S1.
+The second line contains S2.
+The third line contains N.
 
-Take string as an input from stdin.
+Output Format:
 
-Output format:
+The first line contains the N characters present in S1 which are also present in S2.
 
-Print the word is key word or not.
+Boundary Conditions:
 
-Example Input:
+2 <= N <= 10
+2 <= Length of S1, S2 <= 1000
 
-break
+Example Input/Output 1:
+
+Input:
+
+abcbde
+cdefghbb
+3
 
 Output:
 
-break is a keyword
+bcd
 
-Example Input:
+Note:
 
-IF
-
-Output:
-
-IF is not a keyword
-
-
-For example:
-
-Input	Result
-break
-break is a keyword
-IF
-IF is not a keyword
+b occurs twice in common but must be printed only once.
 
 
 
 
 
 
-keywords=['break','case','continue','default','defer','else','for','func','goto','if','map','range','return','struct','type','var']
-s=input()
-flag=0
-for i in keywords:
-    if(s==i):
-        flag=1
-        break
-if(flag==1):
-    print(s,'is a keyword')
-else:
-    print(s,'is not a keyword')
+S1 = input().strip()
+S2 = input().strip()
+N = int(input().strip())
+
+common_chars = set(S1) & set(S2)
+
+output = ''
+count = 0
+added_chars = set()  # Set to store added characters
+
+for char in S1:
+    if char in common_chars and char not in added_chars:
+        output += char
+        added_chars.add(char)
+        count += 1
+        if count == N:
+            break
+
+print(output)
 
