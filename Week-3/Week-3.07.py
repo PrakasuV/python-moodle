@@ -1,94 +1,73 @@
-Month name to days
+IN / OUT 
 
-The length of a month varies from 28 to 31 days. In this exercise you will create a program that reads the name of a month from the user as a string. Then your program should display the number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.
+ 
+
+Ms. Sita, the faculty handling programming lab for you is very strict. Your seniors have told you that she will not allow you to enter the week's lab if you have not completed atleast half the number of problems given last week. Many of you didn't understand this statement and so they requested the good programmers from your batch to write a program to find whether a student will be allowed into a week's lab given the number of problems given last week and the number of problems solved by the student in that week.
+
+ 
+
+Input Format:
+
+ 
+
+ 
+
+Input consists of 2 integers.
+
+ 
+
+The first integer corresponds to the number of problems given and the second integer corresponds to the number of problems solved.
+
+ 
+
+ Output Format:
+
+ 
+
+ 
+
+Output consists of the string “IN” or “OUT”. 
+
+ 
+
+ Sample Input and Output:
+
+ 
+
+Input
+
+ 
+
+ 8
+
+ 
+
+ 3
+
+ 
+
+ Output
+
+ 
+
+OUT
 
 
-
-
-
-Sample Input 1
-
-February
-
-Sample Output 1
-
-February has 28 or 29 days in it.
-
-Sample Input 2
-
-March
-
-Sample Output 2
-
-March has 31 days in it.
-
-Sample Input 3
-
-April
-
-Sample Output 3
-
-April has 30 days in it.
 
 For example:
 
 Input	Result
-
-February	February has 28 or 29 days in it.
-
-March	March has 31 days in it.
-
+8
+3
+OUT
 
 
 
 
-m=input()
 
-if(m=="January"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="February"):
-
-    print(m,"has 28 or 29 days in it.")
-
-elif(m=="March"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="April"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="May"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="June"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="July"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="August"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="September"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="October"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="November"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="December"):
-
-    print(m,"has 31 days in it.")
-
+a=int(input())
+b=int(input())
+if(b>=(a//2)):
+    print("IN")
+else:
+    print("OUT")
