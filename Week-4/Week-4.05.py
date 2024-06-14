@@ -1,50 +1,41 @@
-Nth Fibonacci
+.Product of single digit
 
-Write a program to return the nth number in the fibonacci series. The value of N will be passed to the program as input.
+Given a positive integer N, check whether it can be represented as a product of single digit numbers.
 
+Input Format:
 
+Single Integer input.
 
-NOTE: Fibonacci series looks like –
+Output Format:
 
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, . . . and so on.
+Output displays Yes if condition satisfies else prints No.
 
-i.e. Fibonacci series starts with 0 and 1, and continues generating the next number as the sum of the previous two numbers.
+Example Input:
 
-• first Fibonacci number is 0,
+14
 
-• second Fibonacci number is 1,
+Output:
 
-• third Fibonacci number is 1,
+Yes
 
-• fourth Fibonacci number is 2,
+Example Input:
 
-• fifth Fibonacci number is 3,
+13
 
-• sixth Fibonacci number is 5,
+Output:
 
-• seventh Fibonacci number is 8, and so on.
-
-
-
-For example:
-
-Input:
-
-7
-
-Output
-
-8
+No
 
 
 
-a=[0,1]
-
-for i in range(0,100):
-
-    a.append(a[-1]+a[-2])
-
-q=int(input())
-
-print(a[q-1])
+number=int(input())
+if number < 10:
+    print("yes")
+else:
+    for factor in range(2, 10):
+        if number % factor == 0 and 1 <= number // factor <=9:
+          print("Yes")
+          break
+    else:
+         print("No")
 
