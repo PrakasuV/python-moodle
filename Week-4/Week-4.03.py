@@ -1,45 +1,29 @@
-Prime Checking
+Unique Digit Count
 
-Write a program that finds whether the given number N is Prime or not. If the number is prime, the program should return 2 else it must return 1.
+Write a program to find the count of unique digits in a given number N. The number will be passed to the program as an input of type int.
 
-Assumption: 2 <= N <=5000, where N is the given number.
+Assumption: The input number will be a positive integer number >= 1 and <= 25000.
 
-Example1: if the given number N is 7, the method must return 2
+For e.g.
 
-Example2: if the given number N is 10, the method must return 1
+If the given number is 292, the program should return 2 because there are only 2 unique digits '2' and '9' in this number
 
-
+If the given number is 1015, the program should return 3 because there are 3 unique digits in this number, '1', '0', and '5'.
 
 For example:
 
 Input	Result
 
-7	2
+292	2
 
-10	1
+1015	3
 
 
 
-a=int(input())
-
-for i in range(2,a):
-
-    if(a%2==0):
-
-        flag=0
-
-    elif(a%i!=0):
-
-        flag=1
-
-    else:
-
-        flag=0
-
-if(flag==1):
-
-    print("2")
-
-elif(flag==0):
-
-    print("1")
+number=int(input())
+num_str = str(number)
+unique_digits = set()
+for digit in num_str:
+    unique_digits.add(digit)
+unique_digit_count = len(unique_digits)
+print(unique_digit_count)
