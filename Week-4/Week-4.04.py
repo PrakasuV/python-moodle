@@ -1,35 +1,18 @@
-Next Perfect Square
+Factors of a number
 
-Given a number N, find the next perfect square greater than N.
+Determine the factors of a number (i.e., all positive integer values that evenly divide into a number).
 
-Input Format:
+For example:
 
-Integer input from stdin.
+Input	Result	
 
-Output Format:
-
-Perfect square greater than N.
-
-Example Input:
-
-10
-
-Output:
-
-16
+20	1 2 4 5 10 20	
 
 
 
-a=int(input())
 
-c=[]
 
-for i in range(0,a):
-
-    b=i**2
-
-    if(b>a):
-
-        c.append(b)
-
-print(c[0])
+n=int(input())
+for i in range(1,n+1):
+   if (n%i)==0:
+    print(i,end=' ')
