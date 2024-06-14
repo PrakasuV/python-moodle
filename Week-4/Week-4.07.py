@@ -1,56 +1,40 @@
-Sum of Series
+Non Repeated Digit Count
 
-Write a program to find the sum of the series 1 +11 + 111 + 1111 + . . . + n terms (n will be given as input from the user and sum will be the output)
+Write a program to find the count of non-repeated digits in a given number N. The number will be passed to the program as an input of type int.
 
-Sample Test Cases
+Assumption: The input number will be a positive integer number >= 1 and <= 25000.
 
-Test Case 1      
+Some examples are as below.
 
-Input
+If the given number is 292, the program should return 1 because there is only 1 non-repeated digit '9' in this number
 
-4          
+If the given number is 1015, the program should return 2 because there are 2 non-repeated digits in this number, '0', and '5'.
 
-Output
+If the given number is 108, the program should return 3 because there are 3 non-repeated digits in this number, '1', '0', and '8'.
 
-1234 
-
-Explanation:
-
-as input is 4, have to take 4 terms. 
-
-1 + 11 + 111 + 1111
+If the given number is 22, the function should return 0 because there are NO non-repeated digits in this number.
 
 
-
-
-
-Test Case 2
-
-Input 
-
-6
-
-Output 
-
-123456
 
 For example:
 
 Input	Result
 
-3	123
+292	1
 
-n=int(input())
+1015	2
 
-b=1
+108	3
 
-sum=0
+22	0
 
-for i in range(1,n+1):
 
-    sum+=b
-
-    b=(b*10)+1
-
-print(sum)
+number=int(input())
+num_str=str(number)
+non_repeated_digits=[]
+for digit in num_str:
+    if num_str.count(digit)==1:
+        non_repeated_digits.append(int(digit))
+non_repeated_count =len(non_repeated_digits)
+print(non_repeated_count)
 
