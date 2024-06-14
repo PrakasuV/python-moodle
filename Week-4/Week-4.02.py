@@ -1,56 +1,41 @@
-Non Repeated Digit Count
+2.Next Perfect Square
 
-Write a program to find the count of non-repeated digits in a given number N. The number will be passed to the program as an input of type int.
+Given a number N, find the next perfect square greater than N.
 
-Assumption: The input number will be a positive integer number >= 1 and <= 25000.
+Input Format:
 
-Some examples are as below.
+Integer input from stdin.
 
-If the given number is 292, the program should return 1 because there is only 1 non-repeated digit '9' in this number
+Output Format:
 
-If the given number is 1015, the program should return 2 because there are 2 non-repeated digits in this number, '0', and '5'.
+Perfect square greater than N.
 
-If the given number is 108, the program should return 3 because there are 3 non-repeated digits in this number, '1', '0', and '8'.
+Example Input:
 
-If the given number is 22, the function should return 0 because there are NO non-repeated digits in this number.
+10
 
+Output:
 
-
-For example:
-
-Input	Result
-
-292	1
-
-1015	2
-
-108	3
-
-22	0
+16
 
 
 
-n=int(input())
 
-l=[]
-
-k=[]
-
-while n>0:
-
-    a=n%10
-
-    n=n//10
-
-    l.append(a)
-
-for i in range(len(l)):
-
-    if l.count(l[i])==1:
-
-        k.append(l[i])
-
-print(len(k))
-
+a=int(input())
+sum=a+1
+d=0
+k=-1
+for i in range (0,a):
+    if (k==1):
+        break
+    d=i*i
+    if(d==sum):
+        k=1
+    else:
+        k=0
+if ( k==1):
+    print("Yes")
+else:
+    print("No")
 
 
