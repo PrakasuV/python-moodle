@@ -9,18 +9,12 @@ If the final result(hrs) are in -ve convert that to +ve using abs() function
 The abs() function returns the absolute value of the given number.
 
 
-
 number = -20
-
 absolute_number = abs(number)
-
 print(absolute_number)
+# Output: 20
 
-# Output:20
-
-
-
- Sample Input:
+Sample Input:
 
 450
 
@@ -35,22 +29,14 @@ weekend 0.38
 For example:
 
 Input	Result
-
-450	weekdays 10.38
-
+450
+weekdays 10.38
 weekend 0.38
 
+s=int(input())
+x=(s-500)/130
+x=abs(x)
+print("weekdays",format(x+10,".2f"))
+print("weekend",format(x,".2f"))
 
-
-
-
-
-
-	s=int(input())
-
-	a=(500-s)/130
-
-	print("weekdays {:.2f}".format(abs(a)+10))
-
-	print("weekend {:.2f}".format(abs(a)))
 
