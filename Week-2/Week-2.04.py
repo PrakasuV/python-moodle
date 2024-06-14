@@ -1,38 +1,35 @@
-Hamming Weight
+In London, every year during Dasara there will be a very grand doll show. People try to invent new dolls of different varieties. The best-sold doll's creator will be awarded with a cash prize. So people broke their heads to create dolls innovatively. Knowing this competition, Mr.Lokpaul tried to create a doll that sings only when an even number is pressed and the number should not be zero and greater than 100.
 
-Write a python program that takes a integer between 0 and 15 as input and displays the number of '1' s in its binary form.(Hint:use python bitwise operator.
+ IF Lokpaul wins print true, otherwise false.
 
 Sample Input
 
-3
+10
 
-Sample Output:
+Sample Output
 
-2
+True
 
 Explanation:
 
-The binary representation of 3 is 011, hence there are 2 ones in it. so the output is 2.
+Since 10 is an even number and a number between 0 and 100, True is printed
+
+
+
+For example:
+
+Input	Result
+101
+False
 
 
 
 a=int(input())
+if(a>=0 and a<=100):
+    if(a%2==0):
+        print("True")
+else:
+    
+    print("False")
 
-n=bin(a)
-
-n=n.replace("0b","")
-
-s=str(n)
-
-c=list(s)
-
-d=0
-
-for i in range(len(c)):
-
-    if(int(c[i])==1):
-
-        d+=1
-
-print(d)
 
