@@ -1,87 +1,34 @@
-Admission Eligibility
+Most years have 365 days. However, the time required for the Earth to orbit the Sun is actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap year follow:
 
-Write a program to find the eligibility of admission for a professional course based on the following criteria:
+• Any year that is divisible by 400 is a leap year.
 
-Marks in Maths >= 65
+• Of the remaining years, any year that is divisible by 100 is not a leap year.
 
-Marks in Physics >= 55
+• Of the remaining years, any year that is divisible by 4 is a leap year.
 
-Marks in Chemistry >= 50
+• All other years are not leap years.
 
-Or
+Write a program that reads a year from the user and displays a message indicating whether or not it is a leap year.
 
-Total in all three subjects >= 180
+Sample Input 1
 
-Sample Test Cases
+1900
 
-Test Case 1
+Sample Output 1
 
-Input
+1900 is not a leap year.
 
-70
+Sample Input 2
 
-60
+2000
 
-80
+Sample Output 2
 
-Output 
-
-The candidate is eligible
-
-Test Case 2 
-
-Input
-
-50
-
-80
-
-80 
-
-Output
-
-The candidate is eligible
-
-Test Case 3
-
-Input
-
-50
-
-60
-
-40
-
-Output
-
-The candidate is not eligible
-
-For example:
-
-Input	Result
-
-50
-
-80
-
-80	The candidate is eligible
-
+2000 is a leap year.
 
 
 a=int(input())
-
-b=int(input())
-
-c=int(input())
-
-if(a>=65 and b>=55 and c>=50):
-
-    print("The candidate is eligible")
-
-elif(a+b+c>=180):
-
-    print("The candidate is eligible")
-
+if((a%4==0 and a%100!=0) or a%400==0):
+    print(a,"is a leap year.")
 else:
-
-    print("The candidate is not eligible")
+    print(a,'is not a leap year.')ible")
