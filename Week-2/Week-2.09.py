@@ -1,19 +1,50 @@
-Tax and Tip
+Note:
 
-The program that you create for this exercise will begin by reading the cost of a meal ordered at a restaurant from the user. Then your program will compute the tax and tip for the meal. Use your local tax rate (5 percent) when computing the amount of tax owing. Compute the tip as 18 percent of the meal amount (without the tax). The output from your program should include the tax amount, the tip amount, and the grand total for the meal including both the tax and the tip. Format the output so that all of the values are displayed using two decimal places.
+Dont use if-else. Operators alone must be used .
+
+
+
+A team from the Rotract club had planned to conduct a rally to create awareness among the Coimbatore people to donate blood. They conducted the rally successfully. Many of the Coimbatore people realized it and came forward to donate their blood to nearby blood banks. The eligibility criteria for donating blood are people should be above or equal to 18 and his/ her weight should be above 40. There was a huge crowd and staff in the blood bank found it difficult to manage the crowd. So they decided to keep a system and ask the people to enter their age and weight in the system. If a person is eligible he/she will be allowed inside.
+
+ Write a program and feed it to the system to find whether a person is eligible or not.
+
+ Input Format:
+
+ Input consists of two integers that correspond to the age and weight of a person respectively.
+
+ Output Format:
+
+ Display True(IF ELIGIBLE)
+
+Display False (if not eligible)
 
 Sample Input
 
-100
+19
+
+45
 
 Sample Output
 
-The tax is 5.00 and the tip is 18.00, making the total 123.00
+True
+
+
+
+For example:
+
+Input	Result
+18
+40
+False
+
 
 
 
 
 
 a=int(input())
-
-print("The tax is {:.2f} and the tip is {:.2f}, making the total {:.2f}".format((a*0.05),(a*0.18),(a+((a*0.05)+(a*0.18)))))
+b=int(input())
+if(a>=18 and b>40):
+    print("True")
+else:
+    print("False")
