@@ -1,58 +1,64 @@
-Pythagorean triple
+Write a program to calculate and print the Electricity bill where the unit consumed by the user is given from test case. It prints the total amount the customer has to pay. The charge are as follows: 
 
-Three numbers form a Pythagorean triple if the sum of squares of two numbers is equal to the square of the third.
+Unit                                                     Charge / Unit
 
-For example, 3, 5 and 4 form a Pythagorean triple, since 3*3 + 4*4 = 25 = 5*5 
+Upto 199                                             @1.20
 
-You are given three integers, a, b, and c. They need not be given in increasing order. If they form a Pythagorean triple, then print "Yes", otherwise, print "No". 
+200 and above but less than 400        @1.50
 
-Sample Input
+400 and above but less than 600        @1.80
 
-3
+600 and above                                    @2.00
 
-5
+If bill exceeds Rs.400 then a surcharge of 15% will be charged and the minimum bill should be of Rs.100/- 
 
-4
+Sample Test Cases
 
-Sample Output
+Test Case 1 
 
-Yes
+Input
+
+50 
+
+Output
+
+100.00 
+
+Test Case 2
+
+Input 
+
+300
+
+Output 
+
+517.50
 
 
 
 For example:
 
 Input	Result
-
-3
-
-4
-
-5	Yes
+100.00
+120.00
 
 
 
 
 
-a=int(input())
-
-b=int(input())
-
-c=int(input())
-
-if(a*a+b*b==c*c):
-
-    print("yes")
-
-elif(a*a+c*c==b*b):
-
-    print("yes")
-
-elif(c*c+b*b==a*a):
-
-    print("yes")
-
+a=float(input())
+if(a<=199):
+    x=a*1.20
+elif(a>=200 and a<400):
+    x=a*1.50
+elif(a>=400 and a<600):
+    x=a*1.80
+elif(a>=600):
+    x=a*2.00
+if(x<100):
+    print("100.00")
+elif(x>400):
+    print(f"{(x*0.15)+x:.2f}")
 else:
-
-    print("no")
+    print(f"{x:.2f}")
 
