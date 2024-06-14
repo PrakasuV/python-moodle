@@ -1,82 +1,55 @@
-Merge List
+Given a string S, which contains several words, print the count C of the words whose length is atleast L. (You can include punctuation marks like comma, full stop also as part of the word length. Space alone must be ignored)
 
-Write a Python program to Zip two given lists of lists.
+Input Format:
 
+The first line contains S.
+The second line contains L.
 
+ 
+
+Output Format:
+
+The first line contains C
+
+Boundary Conditions:
+
+2 <= Length of S <= 1000
+
+Example Input/Output 1:
 
 Input:
 
-m : row size
-
-n: column size
-
-list1 and list 2 :  Two lists
-
-Output
-
-Zipped List : List which combined both list1 and list2
-
-
-
-Sample test case
-
-
-
-Sample input
-
-2
-
-2
-
-1 
-
-3
-
+During and after Kenyattas inauguration police elsewhere in the capital, Nairobi, tried to stop the opposition from holding peaceful demonstrations.
 5
 
-7
+Output:
 
-2
+13
 
-4
+Explanation:
 
-6
+The words of minimum length 5 are
+During
+after
+Kenyattas
+inauguration
+police
+elsewhere
+capital,
+Nairobi,
+tried
+opposition
+holding
+peaceful
+demonstrations.
 
-8
 
-
-
-Sample Output
-
-
-
-[[1, 3, 2, 4], [5, 7, 6, 8]]
-
-
-
-def zip_lists(list1, list2):
-
-    return [row1 + row2 for row1, row2 in zip(list1, list2)]
-
- 
-
-def main():
-
-    m = int(input())
-
-    n = int(input())
-
- 
-
- 
-
-    list1 = [[int(input()) for _ in range(n)] for _ in range(m)]
-
-    list2 = [[int(input()) for _ in range(n)] for _ in range(m)]
-
- 
-
-    zipped_list = zip_lists(list1, list2)
-
-    print(zipped_list)
-
+char=input()
+n=int(input())
+s=char.split()
+n1=len(s)
+j=0
+for i in range(0,n1,1):
+    if(len(s[i])>=n):
+        j+=1
+print(j)
