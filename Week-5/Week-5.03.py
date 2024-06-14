@@ -1,78 +1,33 @@
-Count Elements
+Reverse a string without affecting special characters
+ Given a string S, containing special characters and all the alphabets, reverse the string without affecting the positions of the special characters.
+Input:
+A&B
+Output:
+B&A
+Explanation: As we ignore '&' and
+As we ignore '&' and then reverse, so answer is "B&A".
 
-Complete the program to count frequency of each element of an array. Frequency of a particular element will be printed once.
 
-Sample Test Cases
+For example:
 
- Test Case 1
+Input	Result
+A&x#     x&A#
 
- Input
-
- 7
-
-23
-
-45
-
-23
-
-56
-
-45
-
-23
-
-40
-
- Output
-
- 23 occurs 3 times
-
-45 occurs 2 times
-
-56 occurs 1 times
-
-40 occurs 1 times
 
  
 
-import collections 
-
-def CountFrequency(arr):
-
-	return collections.Counter(arr)
-
- 
-
-if __name__ == "__main__":
-
-	# Input size of array
-
-	n = int(input())
-
-	
-
-	# Input elements in array
-
-	arr = []
-
-	for _ in range(n):
-
-    	ele = int(input())
-
-    	arr.append(ele)
-
-	
-
-	# Calculate frequency of each element
-
-	freq = CountFrequency(arr)
-
- 
-
- 
-
-	for key, value in freq.items():
-
-    	print(f"{key} occurs {value} times")
-
+s=input()
+l=[]
+for i in s:
+    if(i.isalpha()):
+        l.append(i)
+l.reverse()
+result=''
+index=0
+for i in s:
+    if(i.isalpha()):
+        result+=l[index]
+        index+=1
+    else:
+        result+=i
+print(result)
