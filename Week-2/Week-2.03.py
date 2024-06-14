@@ -1,10 +1,6 @@
-Birthday Party
-
 Mr. X's birthday is in next month. This time he is planning to invite N of his friends. He wants to distribute some chocolates to all of his friends after the party. He went to a shop to buy a packet of chocolates. At the chocolate shop, 4 packets are there with different numbers of chocolates. He wants to buy such a packet which contains a number of chocolates, which can be distributed equally among all of his friends. Help Mr. X to buy such a packet.
 
-
-
-Input Given: 
+ Input Given: 
 
 N-No of friends
 
@@ -32,17 +28,27 @@ True False True False
 
 
 
+For example:
+
+Input	Result
+5
+25
+23
+20
+10
+True False True True
 
 
-a=int(input())
 
-b=int(input())
 
-c=int(input())
 
-d=int(input())
 
-e=int(input())
+n=int(input())
+for i in range(4):
+    a=int(input())
+    if(a%n==0):
+        print("True",end=' ')
+    else:
+        print("False",end=' ')
 
-print(b%a==0,c%a==0,d%a==0,e%a==0)
 
