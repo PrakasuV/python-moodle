@@ -1,42 +1,43 @@
-Leap Year
-
-Most years have 365 days. However, the time required for the Earth to orbit the Sun is actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap year follow:
-
-• Any year that is divisible by 400 is a leap year.
-
-• Of the remaining years, any year that is divisible by 100 is not a leap year.
-
-• Of the remaining years, any year that is divisible by 4 is a leap year.
-
-• All other years are not leap years.
-
-Write a program that reads a year from the user and displays a message indicating whether or not it is a leap year.
+In this exercise you will create a program that reads a letter of the alphabet from the user. If the user enters a, e, i, o or u then your program should display a message indicating that the entered letter is a vowel. If the user enters y then your program should display a message indicating that sometimes y is a vowel, and sometimes y is a consonant. Otherwise your program should display a message indicating that the letter is a consonant.
 
 Sample Input 1
 
-1900
+i
 
 Sample Output 1
 
-1900 is not a leap year.
+It's a vowel.
 
 Sample Input 2
 
-2000
+y
 
 Sample Output 2
 
-2000 is a leap year.
+Sometimes it's a vowel... Sometimes it's a consonant.
+
+Sample Input3
+
+c
+
+Sample Output 3
+
+It's a consonant.
 
 
+For example:
 
-year=int(input())
+Input	Result
+y
+Sometimes it's a vowel... Sometimes it's a consonant.
+c
+It's a consonant.
 
-if(year%400==0):
 
-    print(year,"is a leap year.")
-
+_a=input()
+if(_a=='a' or _a=='e' or _a=='i' or _a=='o' or _a=='u'):
+    print("It's a vowel.")
+elif(_a=='y'):
+    print("Sometimes it's a vowel... Sometimes it's a consonant.")
 else:
-
-    print(year,"is not a leap year.")
-
+    print("It's a consonant.")
