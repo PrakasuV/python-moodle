@@ -1,20 +1,16 @@
-Return last digit of the given number
+An online retailer sells two products: widgets and gizmos. Each widget weighs 75 grams. Each gizmo weighs 112 grams. Write a program that reads the number of widgets and the number of gizmos from the user. Then your program should compute and display the total weight of the parts.
 
-Write a program that returns the last digit of the given number. Last digit is being referred to the least significant digit i.e. the digit in the ones (units) place in the given number.
+Sample Input:
 
-The last digit should be returned as a positive number.
+10
 
-For example,
+20
 
-if the given number is 197, the last digit is 7
+Sample Output:
 
-if the given number is -197, the last digit is 7
+The total weight of all these widgets and gizmos is 2990 grams.
 
-For example:
 
-Input	Result
-
-123	3
 
 
 
@@ -23,6 +19,7 @@ Input	Result
 
 
 a=int(input())
-
-print(abs(a)%10)
-
+b=int(input())
+c=a*75
+d=b*112
+print("The total weight of all these widgets and gizmos is",c+d,"grams.")
