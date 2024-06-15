@@ -1,45 +1,78 @@
-Count Chars
+Write a Python program to Zip two given lists of lists.
 
-Write a python program to count all letters, digits, and special symbols respectively from a given string
+Input:
 
+m : row size
 
+n: column size
 
-For example:
+list1 and list 2 :  Two lists
 
+Output
 
+Zipped List : List which combined both list1 and list2
 
-Input	Result
+Sample test case
 
-rec@123
+Sample input
+
+2
+
+2
+1 
 
 3
 
-3
+5
 
-1
+7
+2
+
+4
+
+6
+
+8
+Sample Output
+
+[[1, 3, 2, 4], [5, 7, 6, 8]]
 
 
 
 
 
 
+def zip_lists(list1, list2):
+    zipped_list = []
+    for sublist1, sublist2 in zip(list1, list2):
+        zipped_list.append(sublist1 + sublist2)
+    return zipped_list
 
-a=input()
 
-c,d,s=0,0,0
+m = int(input())
 
-for i in range(len(a)):
 
-    if(a[i].isalpha()):
+n = int(input())
 
-        c+=1
 
-    elif(a[i].isdigit()):
+list1 = []
+for _ in range(m):
+    row = []
+    for _ in range(n):
+        row.append(int(input()))
+    list1.append(row)
 
-        d+=1
 
-    else:
+list2 = []
+for _ in range(m):
+    row = []
+    for _ in range(n):
+        row.append(int(input()))
+    list2.append(row)
 
-        s+=1
 
-print(c,d,s,sep="\n")
+zipped_list = zip_lists(list1, list2)
+
+
+print(zipped_list)
+
