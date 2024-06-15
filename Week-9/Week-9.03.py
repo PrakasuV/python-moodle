@@ -1,108 +1,44 @@
-Winner of Election
+Given a number with maximum of 100 digits as input, find the difference between the sum
 
-Given an array of names of candidates in an election. A candidate name in the array represents a vote cast to the candidate. Print the name of candidates received Max vote. If there is tie, print a lexicographically smaller name.
+of odd and even position digits.
 
-Examples: 
+Input Format:
 
-Input :  votes[] = {"john", "johnny", "jackie",
+Take a number in the form of String from stdin.
 
-                    "johnny", "john", "jackie",
+Output Format:
 
-                    "jamie", "jamie", "john",
+Print the difference between sum of even and odd digits
 
-                    "johnny", "jamie", "johnny",
+Example input:
 
-                    "john"};
+1453
 
-Output : John
+Output:
 
-We have four Candidates with name as 'John', 'Johnny', 'jamie', 'jackie'. The candidates John and Johny get maximum votes. Since John is alphabetically smaller, we print it. Use dictionary to solve the above problem
+1
 
- 
+Explanation:
 
-Sample Input:
+Here, sum of even digits is 4 + 3 = 7
 
-10
+sum of odd digits is 1 + 5 = 6.
 
-John
+Difference is 1.
 
-John
-
-Johny
-
-Jamie
-
-Jamie
-
-Johny
-
-Jack
-
-Johny
-
-Johny
-
-Jackie
-
- 
-
-Sample Output:
-
-Johny
-
- 
+Note that we are always taking absolute difference
 
 
 
-For example:
+def differenceSum(n):
+   num_str = str(n)
+   even_sum = 0
+   odd_sum = 0
 
-Input	Result
-
-10
-
-John
-
-John
-
-Johny
-
-Jamie
-
-Jamie
-
-Johny
-
-Jack
-
-Johny
-
-Johny
-
-Jackie	Johny
-
-
-
-n = int(input())
-
-
-
-votes = {}
-
-
-
-for _ in range(n):
-
-    candidate = input()
-
-    votes[candidate] = votes.get(candidate, 0) + 1
-
-
-
-max_votes = max(votes.values())
-
-max_candidates = [candidate for candidate, count in votes.items() if count == max_votes]
-
-
-
-print(min(max_candidates))
-
+   for i in range(len(num_str)):
+      digit = int(num_str[i])
+      if (i + 1) % 2 == 0:
+        even_sum += digit
+      else:
+        odd_sum += digit
+   return abs(even_sum - odd_sum)
