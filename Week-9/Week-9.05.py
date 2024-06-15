@@ -1,66 +1,61 @@
-Scramble Score
+An abundant number is a number for which the sum of its proper divisors is greater than
+
+the number itself. Proper divisors of the number are those that are strictly lesser than the number.
+
+Input Format:
+
+Take input an integer from stdin
+
+Output Format:
+
+Return Yes if given number is Abundant. Otherwise, print No
+
+Example input:
+
+12
+
+Output:
+
+Yes
+
+Explanation
+
+The proper divisors of 12 are: 1, 2, 3, 4, 6, whose sum is 1 + 2 + 3 + 4 + 6 = 16. Since sum of
+
+proper divisors is greater than the given number, 12 is an abundant number.
+
+Example input:
+
+13
+
+Output:
+
+No
+
+Explanation
+
+The proper divisors of 13 is: 1, whose sum is 1. Since sum of proper divisors is not greater
+
+than the given number, 13 is not an abundant number.
+
+For example:
+
+Test	Result
+print(abundant(12))
+Yes
+print(abundant(13))
+No
 
 
+def abundant(num):
+    divisors_sum = 0
+    for i in range(1, num):
+        if num % i == 0:
+            divisors_sum += i
 
-In the game of Scrabble™, each letter has points associated with it. The total score of a word is the sum of the scores of its letters. More common letters are worth fewer points while less common letters are worth more points. 
-
-Write a program that computes and displays the Scrabble™ score for a word. Create a dictionary that maps from letters to point values. Then use the dictionary to compute the score.
-
-A Scrabble™ board includes some squares that multiply the value of a letter or the value of an entire word. We will ignore these squares in this exercise.
-
-
-
-The points associated with each letter are shown below:
-
-Points Letters
-
-1 A, E, I, L, N, O, R, S, T and U
-
-2 D and G
-
-3 B, C, M and P
-
-4 F, H, V, W and Y
-
-5 K
-
-8 J and X
-
-10 Q and Z
-
-
-
-Sample Input
-
-REC
-
-Sample Output
-
-REC is worth 5 points.
-
-
-
-letter_scores = {
-
-    'A': 1, 'E': 1, 'I': 1, 'L': 1, 'N': 1, 'O': 1, 'R': 1, 'S': 1, 'T': 1, 'U': 1,
-
-    'D': 2, 'G': 2,
-
-    'B': 3, 'C': 3, 'M': 3, 'P': 3,
-
-    'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4,
-
-    'K': 5,
-
-    'J': 8, 'X': 8,
-
-    'Q': 10, 'Z': 10
-
-}
-
-word = input().upper()
-
-score = sum(letter_scores.get(letter, 0) for letter in word)
-
-print(word,"is worth",score,"points.")
+    # Check if the sum of proper divisors is greater than the number itself
+    if divisors_sum > num:
+        return "Yes"
+    else:
+        return "No"
 
