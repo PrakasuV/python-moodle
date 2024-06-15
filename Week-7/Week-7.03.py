@@ -1,86 +1,40 @@
-Check Product of Digits
+There is a malfunctioning keyboard where some letter keys do not work. All other keys on the keyboard work properly.
 
-Write a code to check whether product of digits at even places is divisible by sum of digits at odd place of a positive integer.
+Given a string text of words separated by a single space (no leading or trailing spaces) and a string brokenLetters of all distinct letter keys that are broken, return the number of words in text you can fully type using this keyboard.
 
-Input Format:
+Example 1:
 
+Input: text = "hello world", brokenLetters = "ad"
 
+Output: 
 
-Take an input integer from stdin.
+1
 
-
-
-Output Format:
-
-
-
-Print TRUE or FALSE.
-
-
-
-Example Input:
-
-
-
-1256
-
-
-
-Output:
-
-
-
-TRUE
-
-
-
-Example Input:
-
-
-
-1595
-
-
-
-Output:
-
-
-
-FALSE
+Explanation: We cannot type "world" because the 'd' key is broken.
 
 
 
 For example:
 
+Input	Result
+hello world
+ad
+1
+Faculty Upskilling in Python Programming
+ak
+2
 
 
-Test	Result
-
-print(productDigits(1256))	True
-
-print(productDigits(1595))	False
-
-
-
-def productDigits(n):
-
-    a=str(n)
-
-    s,p=0,1
-
-    for i in range(0,len(a),2):
-
-        s+=int(a[i])
-
-    for i in range(1,len(a),2):
-
-        p*=int(a[i])
-
-    if(p%s==0):
-
-        return("True")
-
-    else:
-
-        return("False")
-
+a=input().lower()
+b=input()
+a=a.split()
+c=0
+for i in a:
+    flag=0
+    for j in i:
+        if j in b:
+            flag=1
+            break
+    if(flag==0):
+        c+=1
+print(c)
