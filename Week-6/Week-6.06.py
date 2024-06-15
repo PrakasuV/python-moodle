@@ -1,60 +1,71 @@
-Return Second World in Uppercase
+Output is a merged array without duplicates.
+
+Input Format
+
+N1 - no of elements in array 1
+
+Array elements for array 1
+
+N2 - no of elements in array 2
+
+Array elements for array2
+
+Output Format
+
+Display the merged array
+
+Sample Input 1
+
+5
+
+1 
+
+2 
+
+3 
+
+6 
+
+9
+
+4
+
+2 
+
+4 
+
+5 
+
+10
+
+Sample Output 1
+
+1 2 3 4 5 6 9 10
 
 
-
-Write a program that takes as input a string (sentence), and returns its second word in uppercase.
-
-
-
-For example:
-
-
-
-If input is “Wipro Technologies Bangalore” the function should return “TECHNOLOGIES”
-
-If input is “Hello World” the function should return “WORLD”
-
-If input is “Hello” the program should return “LESS”
+def merge_arrays(arr1, arr2):
+    
+    merged_array = arr1 + arr2
+    
+    merged_array = list(set(merged_array))
+    return merged_array
 
 
-
-NOTE 1: If input is a sentence with less than 2 words, the program should return the word “LESS”.
-
-NOTE 2: The result should have no leading or trailing spaces.
-
-
-
-For example:
+n1 = int(input())
+array1 = []
+for _ in range(n1):
+    array1.append(int(input()))
 
 
-
-Input	Result
-
-Wipro Technologies Bangalore
-
-TECHNOLOGIES
-
-Hello World
-
-WORLD
-
-Hello
-
-LESS
+n2 = int(input())
+array2 = []
+for _ in range(n2):
+    array2.append(int(input()))
 
 
+merged = merge_arrays(array1, array2)
+merged.sort()  
+for i in merged:
+    print(i, end=" ")
 
-f=input()
-
-s=f.split()
-
-if len(s)>1:
-
-    c=s[1]
-
-    print(c.upper())
-
-else:
-
-    print("LESS")
 
