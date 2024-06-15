@@ -1,52 +1,112 @@
-Unique Names
+Given an array of numbers, find the index of the smallest array element (the pivot), for which the sums of all elements to the left and to the right are equal. The array may not be reordered.
+
+Example
+
+arr=[1,2,3,4,6]
+
+·         the sum of the first three elements, 1+2+3=6. The value of the last element is 6.
+
+·         Using zero based indexing, arr[3]=4 is the pivot between the two subarrays.
+
+·         The index of the pivot is 3.
+
+Constraints
+
+·         3 ≤ n ≤ 105
+
+·         1 ≤ arr[i] ≤ 2 × 104, where 0 ≤ i < n
+
+·         It is guaranteed that a solution always exists.
+
+The first line contains an integer n, the size of the array arr.
+
+Each of the next n lines contains an integer, arr[i], where 0 ≤ i < n.
+
+Sample Case 0
+
+Sample Input 0
+
+4
+
+1
+
+2
+
+3
+
+3
+
+Sample Output 0
+
+2
+
+ 
+
+Explanation 0
+
+·         The sum of the first two elements, 1+2=3. The value of the last element is 3.
+
+·         Using zero based indexing, arr[2]=3 is the pivot between the two subarrays.
+
+·         The index of the pivot is 2.
+
+ 
+
+Sample Case 1
+
+Sample Input 1
+
+3
+
+1
+
+2
+
+1
+
+Sample Output 1
+
+1
+
+Explanation 1
+
+·         The first and last elements are equal to 1.
+
+·         Using zero based indexing, arr[1]=2 is the pivot between the two subarrays.
+
+·         The index of the pivot is 1.
+
+
+For example:
+
+Input	Result
+4
+1
+2
+3
+3
+2
+3
+1
+2
+1
+1
 
 
 
-In this exercise, you will create a program that reads words from the user until the user enters a blank line. After the user enters a blank line your program should display each word entered by the user exactly once. The words should be displayed in the same order that they were first entered. For example, if the user enters:
-
-Input: 
-
-first
-
-second
-
-first
-
-third
-
-second
 
 
-
-then your program should display:
-
-
-
-Output:
-
-first
-
-second
-
-third
-
-
-
-
-
-a,c=[],[]
-
-for i in range(0,5):
-
-    b=input()
-
-    a.append(b)
-
-for i in range(len(a)):
-
-    if(a[i] not in c):
-
-        c.append(a[i])
-
-        print(a[i])
+n=int(input())
+arr=[]
+for _ in range(n):
+    arr.append(int(input()))
+tot=sum(arr)
+left=0
+right=tot
+for i in range(n):
+    right-=arr[i]
+    if left==right:
+        print(i)
+        break
+    left+=arr[i]
 
