@@ -1,44 +1,86 @@
-Print repeated no
+Create a student dictionary  for n students with the student name as key and their test mark assignment mark and lab mark as values. Do the following computations and display the result.
 
-Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.There is only one repeated number in nums, return this repeated number. Solve the problem using set.
+1.Identify the student with the  highest average score
 
-Example 1:
+2.Identify the student who as the highest Assignment marks
 
-Input: nums = [1,3,4,2,2]
+3.Identify the student with the Lowest lab marks
 
-Output: 2
+4.Identify the student with the lowest average score
+
+Note:
+
+If more than one student has the same score display all the student names
 
 
 
-Example 2:
+Sample input:
 
-Input: nums = [3,1,3,4,2]
+4
 
-Output: 3
+James 67 89 56
+
+Lalith 89 45 45
+
+Ram 89 89 89
+
+Sita 70 70 70
+
+Sample Output:
+
+Ram
+
+James Ram
+
+Lalith
+
+Lalith
+
+
+
+
+
+
 
 
 
 For example:
 
 Input	Result
+4
+James 67 89 56
+Lalith 89 45 45
+Ram 89 89 89
+Sita 70 70 70
+Ram
+James Ram
+Lalith
+Lalith
 
-1 3 4 4 2	4
 
 
 
 
 
-n =input().split(" ")
-
-n = list(n)
-
-for i in range(len(n)):
-
-    for j in range(i+1,len(n)):
-
-        if n[i] == n[j]:
-
-            print(n[i])
-
-            exit(0)
-
+n = int(input())
+s = {}
+for _ in range(n):
+    data = input().split()
+    name = data[0]
+    tm, am, l = map(int, data[1:]) 
+    s[name] = (tm, am, l)
+a = {name: sum(marks) / len(marks) for name, marks in s.items()}
+h = max(a.values())
+hs = sorted([name for name, score in a.items() if score == h])
+m = max([marks[1] for marks in s.values()])
+ass = sorted([name for name, marks in s.items() if marks[1] == m])
+lm = min([marks[2] for marks in s.values()])
+ls = sorted([name for name, marks in s.items() if marks[2] == lm])
+avgs = min(a.values())
+ags = sorted([name for name, score in a.items() if score == avgs])
+print("\n".join([
+    " ".join(hs),
+    " ".join(ass),
+    " ".join(ls),
+    " ".join(ags)
+]))
