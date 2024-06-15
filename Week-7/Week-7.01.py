@@ -1,71 +1,48 @@
-Abundant Number
+Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.
 
-An abundant number is a number for which the sum of its proper divisors is greater than the number itself. Proper divisors of the number are those that are strictly lesser than the number.
+ 
 
+Example 1:
 
+Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+Output: ["AAAAACCCCC","CCCCCAAAAA"]
+Example 2:
 
-Input Format:
-
-Take input an integer from stdin
-
-Output Format:
-
-Return Yes if given number is Abundant. Otherwise, print No
-
-Example input:
-
-12
-
-Output:
-
-Yes
-
-Explanation
-
-The proper divisors of 12 are: 1, 2, 3, 4, 6, whose sum is 1 + 2 + 3 + 4 + 6 = 16. Since sum of proper divisors is greater than the given number, 12 is an abundant number.
-
-Example input:
-
-13
-
-Output:
-
-No
-
-Explanation
-
-The proper divisors of 13 is: 1, whose sum is 1. Since sum of proper divisors is not greater than the given number, 13 is not an abundant number.
+Input: s = "AAAAAAAAAAAAA"
+Output: ["AAAAAAAAAA"]
+ 
 
 
 
 For example:
 
-Test				Result
+Input	Result
+AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT
+AAAAACCCCC
+CCCCCAAAAA
 
-print(abundant(12))		Yes
+def findRepeatedDnaSequences(s):
+    if len(s) < 10:
+        return []
 
-print(abundant(13))		No
+    sequences = {}
+    result = []
 
-def abundant(n):
+    for i in range(len(s) - 9):
+        substring = s[i:i+10]
+        if substring in sequences:
+            sequences[substring] += 1
+        else:
+            sequences[substring] = 1
 
-    l,s=[],0
+    for sequence, count in sequences.items():
+        if count > 1:
+            result.append(sequence)
+    for i in result:
+        print(i)
 
-    for i in range(1,int(n//2)+1):
+s1=input()
 
-        if(n%i==0):
-
-            l.append(i)
-
-    for i in l:
-
-        s+=i
-
-    if(s>n):
-
-        return("Yes")
-
-    else:
-
-        return("No")
+findRepeatedDnaSequences(s1)
 
 
