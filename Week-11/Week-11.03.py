@@ -1,48 +1,42 @@
-Problem Description:
+Develop a Python program that safely performs division between two numbers provided by the user. Handle exceptions like division by zero and non-numeric inputs.
 
-Write a Python script that asks the user to enter a number within a specified range (e.g., 1 to 100). Handle exceptions for invalid inputs and out-of-range numbers.
+Input Format: Two lines of input, each containing a number.
 
-Input Format:
+Output Format: Print the result of the division or an error message if an exception occurs.
 
-User inputs a number.
-
-Output Format:
-
-Confirm the input or print an error message if it's invalid or out of range.
 
 For example:
 
 Input	Result
+10
+2
+5.0
+10
+0
+Error: Cannot divide or modulo by zero.
+ten
+5
+Error: Non-numeric input provided.
 
-1	Valid input.
-
-101	Error: Number out of allowed range
-
-rec	Error: invalid literal for int()
 
 
+def safe_division(num1, num2):
+    try:
+        result = num1 / num2
+        print(result)
+    except ZeroDivisionError:
+        print("Error: Cannot divide or modulo by zero.")
+    except Exception as e:
+        print("Error:", e)
 
 def main():
-
-    min_range = 1
-
-    max_range = 100
-
-
-
     try:
-
-        num = int(input())
-
-        if num < min_range or num > max_range:
-
-            print("Error: Number out of allowed range")
-
-        else:
-
-            print("Valid input.")
-
+        num1 = float(input())
+        num2 = float(input())
+        safe_division(num1, num2)
     except ValueError:
+        print("Error: Non-numeric input provided.")
 
-        print("Error: invalid literal for int()")
+if __name__ == "__main__":
+    main()
 
