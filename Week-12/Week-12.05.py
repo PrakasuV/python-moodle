@@ -1,12 +1,12 @@
 Background:
 
-Rose manages a personal library with a diverse collection of books. To streamline her library management, she needs a program that can categorize books based on their genres, making it easier to find and organize her collection.
+Dr. John Wesley maintains a spreadsheet with student records for academic evaluation. The spreadsheet contains various data fields including student IDs, marks, class names, and student names. The goal is to develop a system that can calculate the average marks of all students listed in the spreadsheet.
 
 
 
 Problem Statement:
 
-Develop a Python program that reads a series of book titles and their corresponding genres from user input, categorizes the books by genre using a dictionary, and outputs the list of books under each genre in a formatted manner.
+Create a Python-based solution that can parse input data representing a list of students with their respective marks and other details, and compute the average marks. The input may present these details in any order, so the solution must be adaptable to this variability.
 
 
 
@@ -14,87 +14,72 @@ Input Format:
 
 
 
-The input will be provided in lines where each line contains a book title and its genre separated by a comma.
+The first line contains an integer N, the total number of students.
 
-Input terminates with a blank line.
+The second line lists column names in any order (ID, NAME, MARKS, CLASS).
+
+The next N lines provide student data corresponding to the column headers.
 
 Output Format:
 
 
 
-For each genre, output the genre name followed by a colon and a list of book titles in that genre, separated by commas.
+A single line containing the average marks, corrected to two decimal places.
 
 Constraints:
 
 
 
-Book titles and genres are strings.
+1≤N≤100
 
-Book titles can vary in length but will not exceed 100 characters.
+Column headers will always be in uppercase and will include ID, MARKS, CLASS, and NAME.
 
-Genres will not exceed 50 characters.
+Marks will be non-negative integers.
 
-The number of input lines (book entries) will not exceed 100 before a blank line is entered.
+
 
 For example:
 
 Input	Result
-
-Introduction to Programming, Programming
-
-Advanced Calculus, Mathematics	Programming: Introduction to Programming
-
-Mathematics: Advanced Calculus
-
-Fictional Reality, Fiction
-
-Another World, Fiction	Fiction: Fictional Reality, Another World
-
-def categorize_books_sorted():
-
-    books = {}
-
-    
-
-    while True:
-
-        try:
-
-            user_input = input().strip()
-
-        except EOFError:
-
-            break
-
-        
-
-        if not user_input:
-
-            break
-
-        
-
-        title, genre = user_input.split(',')
-
-        genre = genre.strip()
-
-        
-
-        if genre in books:
-
-            books[genre].append(title)
-
-        else:
-
-            books[genre] = [title]
-
-    
-
-    for genre in sorted(books.keys()):
-
-        print(f"{genre}: {', '.join(books[genre])}")
+3
+ID NAME MARKS CLASS
+101 John 78 Science
+102 Doe 85 Math
+103 Smith 90 History
+84.33
+3
+MARKS CLASS NAME ID
+78 Science John 101
+85 Math Doe 102
+90 History Smith 103
+84.33
 
 
+def calculate_average_marks(N, column_names, student_data):
+    marks_index = column_names.index("MARKS")
+    total_marks = 0
+    valid_students_count = 0
+   
+    for student in student_data:
+        if len(student) > marks_index and student[marks_index].isdigit():
+            total_marks += int(student[marks_index])
+            valid_students_count += 1
+           
+    if valid_students_count == 0:
+        return 0  # No valid students with marks found
+   
+    average_marks = total_marks / valid_students_count
+    return average_marks
 
-categorize_books_sorted()
+if __name__ == "__main__":
+    N = int(input())
+    column_names = input().split()
+    student_data = []
+    for _ in range(N):
+        student_info = input().split()
+        student_data.append(student_info)
+   
+    average_marks = calculate_average_marks(N, column_names, student_data)
+    print("{:.2f}".format(average_marks))
+
 
