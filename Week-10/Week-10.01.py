@@ -1,43 +1,59 @@
-Merge Sort
+An list contains N numbers and you want to determine whether two of the numbers sum to a given number K. For example, if the input is 8, 4, 1, 6 and K is 10, the answer is yes (4 and 6). A number may be used twice.
 
-Write a Python program to sort a list of elements using the merge sort algorithm.
+Input Format
+
+The first line contains a single integer n , the length of list
+
+The second line contains n space-separated integers, list[i].
+
+The third line contains integer k.
+
+Output Format
+
+Print Yes or No.
+
+Sample Input
+
+7
+
+0 1 2 4 6 5 3 
+
+1 
+
+Sample Output
+
+Yes
+
 
 
 
 For example:
 
 Input	Result
-
 5
-
-6 5 4 3 8
-
-	3 4 5 6 8
-
-
-
-
-
-a=int(input())
-
-l=[]
-
-l.extend(input().split())
-
-for i in range(a-1):
-
-    for j in range(a-1):
-
-        if(int(l[j])>int(l[j+1])):
-
-            t=int(l[j])
-
-            l[j]=int(l[j+1])
-
-            l[j+1]=t
-
-for i in range(a):
-
-    print(int(l[i]),end=" ")
+8 9 12 15 3
+11
+Yes
+6
+2 9 21 32 43 43 1
+4
+No
 
 
+
+
+
+
+neil=int(input())
+a = list(map(int, input().split()))
+key=int(input())
+fg=0
+for i in range(neil):
+    for j in range(0,neil):
+        if(a[i]!=a[j]):
+            if(a[i]+a[j]==key):
+                fg+=1
+if(fg==0):
+    print("No")
+else:
+    print("Yes")
