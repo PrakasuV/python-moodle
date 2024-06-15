@@ -6,50 +6,25 @@ Input Format: A single line input representing the user's age.
 Output Format: Print a message based on the age or an error if the input is invalid.
 
 
-
-
-
 For example:
 
 Input	Result
-
 twenty
-
-	Error: Please enter a valid age.
-
-
-
+Error: Please enter a valid age.
 25
-
-	You are 25 years old.
-
-
-
+You are 25 years old.
 -1
-
-	Error: Please enter a valid age.
+Error: Please enter a valid age.
 
 
 
 
 
 try:
-
-    a=input()
-
-    if(len(a)==0):
-
+    age = int(input())
+    if age < 0:
         print("Error: Please enter a valid age.")
-
-    elif a.isnumeric():
-
-        print("You are",a,"years old.")
-
     else:
-
-        print("Error: Please enter a valid age.")
-
+        print("You are {} years old.".format(age))
 except:
-
     print("Error: Please enter a valid age.")
-
