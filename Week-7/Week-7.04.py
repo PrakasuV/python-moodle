@@ -1,63 +1,34 @@
-Christmas Discount
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.There is only one repeated number in nums, return this repeated number. Solve the problem using set.
 
-An e-commerce company plans to give their customers a special discount for Christmas.
+Example 1:
 
-They are planning to offer a flat discount. The discount value is calculated as the sum of all the prime digits in the total bill amount.
+Input: nums = [1,3,4,2,2]
+Output: 2
+Example 2:
 
-Write an python code to find the discount value for the given total bill amount.
+Input: nums = [3,1,3,4,2]
+Output: 3
 
-Constraints
-
-1 <= orderValue< 10e100000
-
-Input
-
-The input consists of an integer orderValue, representing the total bill amount.
-
-Output
-
-Print an integer representing the discount value for the given total bill amount.
-
-Example Input
-
-578
-
-Output
-
-12
 
 For example:
 
-Test	Result
+Input	Result
+1 3 4 4 2
+4
 
-print(christmasDiscount(578))	12
 
 
+def find_duplicate(nums):
+    seen = set()
+    for num in nums:
+        if num in seen:
+            return num
+        seen.add(num)
 
-def christmasDiscount(n):
+# Input
+l = input()
+nums = list(map(int, l.split()))
 
-    res=0
-
-    while n!=0:
-
-        rem=n%10
-
-        flag=0
-
-        for i in range(1,rem+1):
-
-            if rem%i==0:
-
-                flag+=1
-
-        if flag==2:
-
-            res=res+rem
-
-        n=n//10
-
-        
-
-    return res
-
+# Output
+print(find_duplicate(nums))
          
