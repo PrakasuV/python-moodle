@@ -1,82 +1,90 @@
-Frequency of Elements
+Given an listof integers, sort the array in ascending order using the Bubble Sort algorithm above. Once sorted, print the following three lines:
 
-To find the frequency of numbers in a list and display in sorted order.
+1.      List is sorted in numSwaps swaps., where numSwaps is the number of swaps that took place.
 
-Constraints: 
+2.      First Element: firstElement, the  first element in the sorted list.
 
-1<=n, arr[i]<=100 
+3.      Last Element: lastElement, the last element in the sorted list.
 
-Input: 
+For example, given a worst-case but small array to sort: a=[6,4,1]. It took  3 swaps to sort the array. Output would be
 
-1 68 79 4 90 68 1 4 5 
+Array is sorted in 3 swaps.  
+First Element: 1  
+Last Element: 6   
+Input Format
 
-output:
+The first line contains an integer,n , the size of the list a .
+The second line contains  n,  space-separated integers a[i].
 
- 1 2
+Constraints
 
- 4 2
+·         2<=n<=600
 
- 5 1
+·         1<=a[i]<=2x106.
 
- 68 2
+Output Format
 
- 79 1 
+You must print the following three lines of output:
 
-90 1
+1.      List is sorted in numSwaps swaps., where numSwaps is the number of swaps that took place.
 
+2.      First Element: firstElement, the  first element in the sorted list.
 
+3.      Last Element: lastElement, the last element in the sorted list.
+
+Sample Input 0
+
+3
+
+1 2 3
+
+Sample Output 0
+
+List is sorted in 0 swaps.
+
+First Element: 1
+
+Last Element: 3
 
 
 
 For example:
 
 Input	Result
-
-4 3 5 3 4 5	3 2
-
-4 2
-
-5 2
-
-
-
-
-
-def count_frequency(arr):
-
-    frequency = {}
-
-    
-
-    # Count the frequency of each number in the list
-
-    for num in arr:
-
-        frequency[num] = frequency.get(num, 0) + 1
-
-    
-
-    # Sort the dictionary based on keys
-
-    sorted_frequency = sorted(frequency.items())
-
-    
-
-    # Print the frequency of each number
-
-    for num, freq in sorted_frequency:
-
-        print(num, freq)
+3
+3 2 1
+List is sorted in 3 swaps.
+First Element: 1
+Last Element: 3
+5
+1 9 2 8 4
+List is sorted in 4 swaps.
+First Element: 1
+Last Element: 9
 
 
 
-# Input the list of numbers
 
+
+def bubble_sort(arr):
+    n = len(arr)
+    swaps = 0
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swaps += 1
+    return swaps
+
+def print_sorted_array(arr):
+    print("List is sorted in", bubble_sort(arr), "swaps.")
+    print("First Element:", arr[0])
+    print("Last Element:", arr[-1])
+
+# Taking input
+n = int(input())
 arr = list(map(int, input().split()))
 
-
-
-# Count the frequency and print the result
-
-count_frequency(arr)
+# Sorting the array using bubble sort and printing the required output
+print_sorted_array(arr)
 
