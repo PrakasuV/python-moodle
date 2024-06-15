@@ -1,40 +1,58 @@
-Remove Characters
+Complete the program to count frequency of each element of an array. Frequency of a particular element will be printed once.
 
-Given two Strings s1 and s2, remove all the characters from s1 which is present in s2.
+ 
+
+Sample Test Cases
+
+ 
+
+Test Case 1
+
+ 
+
+Input
+
+ 
+
+7
+
+23
+
+45
+
+23
+
+56
+
+45
+
+23
+
+40
+
+ 
+
+Output
+
+ 
+
+23 occurs 3 times
+
+45 occurs 2 times
+
+56 occurs 1 times
+
+40 occurs 1 times
 
 
 
-Constraints
 
-1<= string length <= 200
-
-Sample Input 1
-
-experience
-
-enc
-
-
-
-Sample Output 1
-
-xpri
-
-
-
-
-
-def remove_chars(s1, s2):
-
-    return ''.join([char for char in s1 if char not in s2])
-
-s1=input()
-
-s2=input()
-
-result = remove_chars(s1, s2)
-
-print(result)
-
+a=int(input())
+b=[]
+for i in range(a):
+    b.append(int(input()))
+c={x:b.count(x) for x in b} 
+for i in c:
+    print(i,"occurs",c[i],"times")
 
 
