@@ -1,82 +1,76 @@
-Coin Change
+Given an array of strings words, return the words that can be typed using letters of the alphabet on only one row of American keyboard like the image below.
 
-complete function to implement coin change making problem i.e. finding the minimum
+In the American keyboard:
 
-number of coins of certain denominations that add up to given amount of money.
+the first row consists of the characters "qwertyuiop",
+the second row consists of the characters "asdfghjkl", and
+the third row consists of the characters "zxcvbnm".
 
-The only available coins are of values 1, 2, 3, 4
+ 
 
-Input Format:
+Example 1:
 
-Integer input from stdin.
+Input: words = ["Hello","Alaska","Dad","Peace"]
+Output: ["Alaska","Dad"]
+Example 2:
 
-Output Format:
+Input: words = ["omk"]
+Output: []
+Example 3:
 
-return the minimum number of coins required to meet the given target.
+Input: words = ["adsdf","sfd"]
+Output: ["adsdf","sfd"]
 
-Example Input:
 
-16
+For example:
 
-Output:
-
+Input	Result
 4
-
-Explanation:
-
-We need only 4 coins of value 4 each
-
-Example Input:
-
-25
-
-Output:
-
-7
-
-Explanation:
-
-We need 6 coins of 4 value, and 1 coin of 1 value
+Hello
+Alaska
+Dad
+Peace
+Alaska
+Dad
+2
+adsfd
+afd
+adsfd
+afd
 
 
 
-def coinChange(amount):
-
-    # Available coin denominations
-
-    coins = [1, 2, 3, 4]
-
-    # Initialize a list to store the minimum number of coins for each amount from 0 to the target amount
-
-    dp = [float('inf')] * (amount + 1)
-
-    dp[0] = 0  # Base case: 0 coins needed to make amount 0
-
-   
-
-    # Iterate through all amounts from 1 to the target amount
-
-    for i in range(1, amount + 1):
-
-        # Iterate through all available coin denominations
-
-        for coin in coins:
-
-        	# If the current coin denomination is less than or equal to the current amount
-
-        	if coin <= i:
-
-            	# Update dp[i] to be the minimum between its current value and dp[i - coin] + 1
-
-            	dp[i] = min(dp[i], dp[i - coin] + 1)
-
-   
-
-    # The result is stored at dp[amount]
-
-    return dp[amount]
-
-    amount = int(input())
-
-    print(coinChange(amount))
-
+a=int(input())
+lst=[]
+for i in range(0,a):
+    b=input("")
+    lst.append(b)
+lst2=['q','w','e','r','t','y','u','i','o','p','Q','W','E','R','T','Y','U','I','O','P']
+lst3=['a','s','d','f','g','h','j','k','l','A','S','D','F','G','H','J','K','L']
+lst4=['z','x','c','v','b','n','m','Z','X','C','V','B','N','M']
+l=0
+m=0
+n=0
+lst5=[]
+for i in lst:
+    l=0
+    m=0
+    n=0
+    j=i
+    b=len(j)
+    for k in range(0,b):
+        if(i[k] not in lst3 and i[k] not in lst4):
+            l+=1
+        elif(i[k] not in lst2 and i[k] not in lst4):
+            m+=1
+        elif(i[k] not in lst2 and i[k] not in lst3):
+            n+=1
+    if(l==b or m==b or n==b):
+        lst5.append(i)
+p=0
+for i in lst5:
+    p+=1
+    if i!=0:
+        print(i)
+if(p==0):
+    print("No words")
