@@ -1,104 +1,35 @@
-Peak Element
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order. You read an list of numbers. You need to arrange the elements in ascending order and print the result. The sorting should be done using bubble sort.
 
-Given an list, find peak element in it. A peak element is an element that is greater than its neighbors.
-
-An element a[i] is a peak element if
-
-A[i-1] <= A[i] >=a[i+1] for middle elements. [0<i<n-1]
-
-A[i-1] <= A[i] for last element [i=n-1]
-
-A[i]>=A[i+1] for first element [i=0]
-
-Input Format
-
-The first line contains a single integer n , the length of A .
-
-The second line contains n space-separated integers,A[i].
+Input Format: The first line reads the number of elements in the array. The second line reads the array elements one by one.
 
 
-
-Output Format
-
-Print peak numbers separated by space.
-
-
-
-Sample Input
-
-5
-
-8 9 10 2 6
-
-Sample Output
-
-10 6
-
-
+Output Format: The output should be a sorted list.
 
 
 
 For example:
 
 Input	Result
-
-4
-
-12 3 6 8 	12 8
-
-
-
-def find_peak(arr):
-
-    peak_elements = []
+6
+3 4 8 7 1 2
+1 2 3 4 7 8
+5 
+4 5 2 3 1
+1 2 3 4 5
 
 
 
-    # Check for the first element
 
-    if arr[0] >= arr[1]:
+def bubbleSort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
-        peak_elements.append(arr[0])
+n = int(input().strip())
+arr = list(map(int, input().strip().split()))
 
-
-
-    # Check for middle elements
-
-    for i in range(1, len(arr) - 1):
-
-        if arr[i - 1] <= arr[i] >= arr[i + 1]:
-
-            peak_elements.append(arr[i])
-
-
-
-    # Check for the last element
-
-    if arr[-1] >= arr[-2]:
-
-        peak_elements.append(arr[-1])
-
-
-
-    return peak_elements
-
-
-
-# Input the length of the list
-
-n = int(input())
-
-
-
-# Input the list of integers
-
-arr = list(map(int, input().split()))
-
-
-
-# Find peak elements and print the result
-
-peak_elements = find_peak(arr)
-
-print(*peak_elements)
+bubbleSort(arr)
+print(*arr)
 
