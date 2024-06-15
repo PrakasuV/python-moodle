@@ -1,102 +1,37 @@
-Sort Dictionary by Values Summation
+A number is considered to be ugly if its only prime factors are 2, 3 or 5.
 
-Give a dictionary with value lists, sort the keys by summation of values in value list.
+[1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, …] is the sequence of ugly numbers.
 
- Input : test_dict = {‘Gfg’ : [6, 7, 4], ‘best’ : [7, 6, 5]}
+Task:
 
-Output : {‘Gfg’: 17, ‘best’: 18}
+complete the function which takes a number n as input and checks if it's an ugly number.
 
-Explanation : Sorted by sum, and replaced.
+return ugly if it is ugly, else return not ugly
 
- Input : test_dict = {‘Gfg’ : [8,8], ‘best’ : [5,5]}
+Hint:
 
-Output : {‘best’: 10, ‘Gfg’: 16}
-
-Explanation : Sorted by sum, and replaced.
-
- Sample Input:
-
-2
-
-Gfg 6 7 4
-
-Best 7 6 5
-
-Sample Output
-
-Gfg 17
-
-Best 18
-
- 
-
-
-
-
+An ugly number U can be expressed as: U = 2^a * 3^b * 5^c, where a, b and c are nonnegative integers.
 
 For example:
 
-Input	Result
-
-2
-
-Gfg 6 7 4
-
-Best 7 6 5	Gfg 17
-
-Best 18
+Test	Result
+print(checkUgly(6))
+ugly 
+print(checkUgly(21))
+not ugly 
 
 
 
-a=int(input())
-
-d={}
-
-for i in range(a):
-
-    b=input()
-
-    b=b.partition(" ")
-
-    d[b[0]]=b[-1].split(" ")
-
-n=list(d.values())
-
-k=list(d.keys())
-
-for i in range(len(n)):
-
-    s=0
-
-    for j in range(len(n[i])):
-
-        s+=int(n[i][j])
-
-    d.update({k[i]:s})
-
-l=list(d.items())
-
-if(l[0][1]<l[1][1]):
-
-    for k,v in d.items():
-
-        print(k,v)
-
-else:
-
-    j=1
-
-    for k,v in d.items():
-
-        if(j==1):
-
-            k1,v1=k,v
-
-            j+=1
-
-        else:
-
-            print(k,v)
-
-    print(k1,v1)
-
+def checkUgly(n):
+    if n <= 0:
+        return "not ugly"
+    while n % 2 == 0:
+        n /= 2
+    while n % 3 == 0:
+        n /= 3
+    while n % 5 == 0:
+        n /= 5
+    if n == 1:
+        return "ugly"
+    else:
+        return "not ugly"
