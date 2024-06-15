@@ -1,124 +1,51 @@
-Student Record
+complete function to implement coin change making problem i.e. finding the minimum
 
+number of coins of certain denominations that add up to given amount of money.
 
+The only available coins are of values 1, 2, 3, 4
 
-Create a student dictionary  for n students with the student name as key and their test mark assignment mark and lab mark as values. Do the following computations and display the result.
+Input Format:
 
-1.Identify the student with the  highest average score
+Integer input from stdin.
 
-2.Identify the student who as the highest Assignment marks
+Output Format:
 
-3.Identify the student with the Lowest lab marks
+return the minimum number of coins required to meet the given target.
 
-4.Identify the student with the lowest average score
+Example Input:
 
-Note:
+16
 
-If more than one student has the same score display all the student names
-
-
-
-Sample input:
+Output:
 
 4
 
-James 67 89 56
+Explanation:
 
-Lalith 89 45 45
+We need only 4 coins of value 4 each
 
-Ram 89 89 89
+Example Input:
 
-Sita 70 70 70
+25
 
-Sample Output:
+Output:
 
-Ram
+7
 
-James Ram
+Explanation:
 
-Lalith
-
-Lalith
+We need 6 coins of 4 value, and 1 coin of 1 value
 
 
-
-n = int(input())
-
-max_average = float('-inf')
-
-min_average = float('inf')
-
-max_assignment = float('-inf')
-
-min_lab = float('inf')
-
-max_average_students = []
-
-max_assignment_students = []
-
-min_lab_students = []
-
-min_average_students = []
-
-for _ in range(n):
-
-    name, test, assignment, lab = input().split()
-
-    test = int(test)
-
-    assignment = int(assignment)
-
-    lab = int(lab)
-
-    average = (test + assignment + lab) / 3
-
-    if average > max_average:
-
-        max_average = average
-
-        max_average_students = [name]
-
-    elif average == max_average:
-
-        max_average_students.append(name)
-
-    if average < min_average:
-
-        min_average = average
-
-        min_average_students = [name]
-
-    elif average == min_average:
-
-        min_average_students.append(name)
-
-    if assignment > max_assignment:
-
-        max_assignment = assignment
-
-        max_assignment_students = [name]
-
-    elif assignment == max_assignment:
-
-        max_assignment_students.append(name)
-
-    if lab < min_lab:
-
-        min_lab = lab
-
-        min_lab_students = [name]
-
-    elif lab == min_lab:
-
-        min_lab_students.append(name)
-
-print(*sorted(max_average_students))
-
-print(*sorted(max_assignment_students))
-
-print(*sorted(min_lab_students))
-
-print(*sorted(min_average_students))
+def coinChange(n):
+    coins = [1, 2, 3, 4]
+    min_coins = [float('inf')] * (n + 1)
+    min_coins[0] = 0
+    for amount in range(1, n + 1):
+        for coin in coins:
+            if amount - coin >= 0:
+               min_coins[amount] = min(min_coins[amount], min_coins[amount - coin] + 1)
+    return min_coins[n]
 
 
 
